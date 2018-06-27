@@ -179,19 +179,20 @@
                 </a>
             </div>
 
-            <nav id="breadcrumb">
-                <p style="display:inline;">
-                    <a href="http://snarf.ebi.ac.uk:8880/ols-beta/index">OLS</a> &gt;
-                    <a class="nounderline" href="http://snarf.ebi.ac.uk:8880/ols-beta/ontologies/efo">Experimental Factor Ontology</a>
-                    &nbsp;
-                    <a class="nounderline" property="codingSystem" href="http://snarf.ebi.ac.uk:8880/ols-beta/ontologies/efo" style="border-bottom-width: 0px;" content="efo">
-                        <span class="ontology-source">EFO</span>
-                   </a>   &gt;
-                    <span id="shortForm" class="term-source" property="codeValue">EFO:0000400</span>
-
-                    <button title="Copy id to clipboard" id="copyShortForm" data-clipboard-action="copy" data-clipboard-target="#shortForm" class="button tiny third copyButton" type="button">Copy</button>
-                </p>
+            <nav aria-label="You are here:" role="navigation">
+              <ul class="breadcrumbs">
+                <li><a href="http://snarf.ebi.ac.uk:8880/ols-beta/index">OLS</a></li>
+                <li><a class="nounderline" href="http://snarf.ebi.ac.uk:8880/ols-beta/ontologies/efo">Experimental Factor Ontology</a></li>
+                <li><a property="codingSystem" href="http://snarf.ebi.ac.uk:8880/ols-beta/ontologies/efo" content="efo">
+                  <span class="ontology-source">EFO</span>
+                </a></li>
+                <li>
+                  <span id="shortForm" class="term-source" property="codeValue">EFO:0000400</span>
+                  <button title="Copy id to clipboard" id="copyShortForm" data-clipboard-action="copy" data-clipboard-target="#shortForm" class="button tiny third copyButton" type="button"><span class="icon icon-functional" data-icon="c"></span> Copy</button>
+                </li>
+              </ul>
             </nav>
+
         </div>
                 <div>
                     <div class="small-8 column">
