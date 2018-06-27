@@ -173,11 +173,16 @@
 <section id="main-content-area" role="main">
     <div vocab="http://schema.org/" typeof="MedicalCode" id="content" role="main" class="row">
         <div class="breadcrumbDiv">
-            <div style="float:right;padding-right: 5px;">
-                <a style="float:right; border-bottom: none;" href="http://snarf.ebi.ac.uk:8880/ols-beta/api/ontologies/efo/terms?iri=http://www.ebi.ac.uk/efo/EFO_0000400">
-                    <img src="http://snarf.ebi.ac.uk:8880/ols-beta/img/file_JSON.png" alt="JSON" title="Get data as JSON" />
-                </a>
-            </div>
+          <div id="termPageSearchBox" class="">
+            <form name="local-search" action="http://snarf.ebi.ac.uk:8880/ols-beta/search" method="get">
+                <div id="bloodhound">
+                    <input class="form-control typeahead" autofocus="autofocus" type="text" name="q" data-olswidget="select" data-olsontology="efo" data-selectpath="http://snarf.ebi.ac.uk:8880/ols-beta/" placeholder="Search EFO" aria-describedby="basic-addon1" />
+                    <button class="button secondary searchButton glyphicon glyphicon-search" style="" type="submit">Search!</button>
+             </div>
+             <input type="hidden" name="ontology" value="efo" />
+           </form>
+          </div>
+
 
             <nav aria-label="You are here:" role="navigation">
               <ul class="breadcrumbs">
@@ -194,25 +199,6 @@
             </nav>
 
         </div>
-                <div>
-                    <div class="small-8 column">
-                        <h2 property="name" class="margin-bottom-b">diabetes mellitus</h2>
-                        <span property="url" id="OLS_ID" class="small secondary-color">http://www.ebi.ac.uk/efo/EFO_0000400
-                          <a class="no-underline" target="blank" href="http://www.ebi.ac.uk/efo/EFO_0000400"><span class="show-for-sr">Go to external page</span><span class="icon icon-generic" data-icon="x"></span>
-                        </span>
-                        <span class="margin-left-medium"><button title="Copy id to clipboard" id="copyThis" data-clipboard-action="copy" data-clipboard-target="#OLS_ID" class="secondary-color small copyButton" type="button"><span class="icon icon-functional" data-icon="c"></span> Copy</button></p>
-                    </div>
-
-                    <div id="termPageSearchBox" class="small-4 columns">
-                        <form name="local-search" action="http://snarf.ebi.ac.uk:8880/ols-beta/search" method="get">
-                            <div id="bloodhound">
-                                <input class="form-control typeahead" autofocus="autofocus" type="text" name="q" data-olswidget="select" data-olsontology="efo" data-selectpath="http://snarf.ebi.ac.uk:8880/ols-beta/" placeholder="Search EFO" aria-describedby="basic-addon1" />
-                                <button class="button secondary searchButton glyphicon glyphicon-search" style="" type="submit">Search!</button>
-                         </div>
-                         <input type="hidden" name="ontology" value="efo" />
-                     </form>
-                 </div>
-             </div>
 
 
              <!--
@@ -223,21 +209,24 @@
              </div>-->
 
 
-                <div class="small-12 columns">
-
-                    <div property="description">
-                    </div>
-
-                    <p><span class="tag">Synonyms</span>
-                       <span property="alternateName" class="label secondary-color">Diabetes mellitus (disorder), Diabetes, Diabetes mellitus, NOS, DM - Diabetes mellitus, Diabetes NOS</span>
-                    </p>
-
-                </div>
 
 
 
 
             <div id="terms-tab-content" class="small-8 large-push-4 columns">
+              <h2 property="name" class="margin-bottom-b">diabetes mellitus</h2>
+              <p>
+                <span property="url" id="OLS_ID" class="small secondary-color">http://www.ebi.ac.uk/efo/EFO_0000400
+                <a class="no-underline" target="blank" href="http://www.ebi.ac.uk/efo/EFO_0000400"><span class="show-for-sr">Go to external page</span><span class="icon icon-generic" data-icon="x"></span>
+                </span>
+                <span class="margin-left-medium"><button title="Copy id to clipboard" id="copyThis" data-clipboard-action="copy" data-clipboard-target="#OLS_ID" class="secondary-color small copyButton" type="button"><span class="icon icon-functional" data-icon="c"></span> Copy</button>
+
+                <a  href="http://snarf.ebi.ac.uk:8880/ols-beta/api/ontologies/efo/terms?iri=http://www.ebi.ac.uk/efo/EFO_0000400" class="small no-underline margin-left-medium float-right">
+                  <span class="icon icon-fileformats" data-icon="J"></span> <span class="secondary-color ">Get data as JSON</span>
+                </a>
+              </p>
+
+
                    <ul class="tabs" data-tabs="true" id="terms_tabs">
                        <li class="tabs-title is-active"><a id="tree-link" class="icon icon-functional" data-icon="h" data-tabs-target="tree-tab" href="#tree-tab" aria-selected="true"> Tree view</a></li>
                        <li class="tabs-title"><a id="oxo-link" class="icon icon-generic" data-icon="g" data-tabs-target="oxo-tab" href="#oxo-tab"> Term mappings</a></li>
@@ -295,9 +284,15 @@
 
 
                 <div id="right_info_box" class="small-4 large-pull-8 columns">
-                    <div id="term_info_box" class="callout white-background">
-                        <h4>Term info</h4>
-                        <hr/>
+                    <div id="term_info_box" class="callout small white-background">
+                      <div property="description">
+                      </div>
+
+                      <p><span class="tag">Synonyms</span>
+                         <span property="alternateName" class="">Diabetes mellitus (disorder), Diabetes, Diabetes mellitus, NOS, DM - Diabetes mellitus, Diabetes NOS</span>
+                      </p>
+
+                        <span class="tag">Term info</span>
                         <div class="">
 
                             <!--
