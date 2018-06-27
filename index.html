@@ -172,16 +172,19 @@
 
 <section id="main-content-area" role="main">
     <div vocab="http://schema.org/" typeof="MedicalCode" id="content" role="main" class="row">
-        <div class="breadcrumbDiv">
-          <div id="termPageSearchBox" class="">
+        <div class="breadcrumbDiv columns">
+
+
+          <div id="termPageSearchBox" class="float-right">
             <form name="local-search" action="http://snarf.ebi.ac.uk:8880/ols-beta/search" method="get">
-                <div id="bloodhound">
-                    <input class="form-control typeahead" autofocus="autofocus" type="text" name="q" data-olswidget="select" data-olsontology="efo" data-selectpath="http://snarf.ebi.ac.uk:8880/ols-beta/" placeholder="Search EFO" aria-describedby="basic-addon1" />
-                    <button class="button secondary searchButton glyphicon glyphicon-search" style="" type="submit">Search!</button>
+              <div id="bloodhound">
+                <input class="form-control typeahead" autofocus="autofocus" type="text" name="q" data-olswidget="select" data-olsontology="efo" data-selectpath="http://snarf.ebi.ac.uk:8880/ols-beta/" placeholder="Search within the EFO" aria-describedby="basic-addon1" />
+                <button class="button "type="submit"><span class="icon icon-functional" data-icon="j"></span></button>
              </div>
              <input type="hidden" name="ontology" value="efo" />
            </form>
           </div>
+
 
 
             <nav aria-label="You are here:" role="navigation">
@@ -195,6 +198,8 @@
                   <span id="shortForm" class="term-source" property="codeValue">EFO:0000400</span>
                   <button title="Copy id to clipboard" id="copyShortForm" data-clipboard-action="copy" data-clipboard-target="#shortForm" class="secondary-color tiny copyButton" type="button"><span class="icon icon-functional" data-icon="c"></span> Copy</button>
                 </li>
+
+
               </ul>
             </nav>
 
