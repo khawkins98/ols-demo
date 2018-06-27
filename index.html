@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"/> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"/> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"/> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+
+
+<head>
+
+    <!-- Your [project-name] here -->
+    <meta name="author" content="Ontology Xref Service" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#70BDBD" /> <!-- Android Chrome mobile browser tab color -->
+
+    <!-- Add information on the life cycle of this page -->
+    <meta name="ebi:owner" content="Simon Jupp" /> <!-- Who should be contacted about changes -->
+    <meta name="ebi:review-cycle" content="365" /> <!-- In days, how often should the content be reviewed -->
+
+    <!-- If you link to any other sites frequently, consider optimising performance with a DNS prefetch -->
+    <link rel="dns-prefetch" href="//embl.de" />
+
+    <!-- If you have custom icon, replace these as appropriate.
+     You can generate them at realfavicongenerator.net -->
+    <link rel="icon" type="image/x-icon" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/android-chrome-192x192.png" /> <!-- Android (192px) -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/apple-icon-114x114.png" /> <!-- For iPhone 4 Retina display (114px) -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/apple-icon-72x72.png" /> <!-- For iPad (72px) -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/apple-icon-144x144.png" /> <!-- For iPad retinat (144px) -->
+    <link rel="apple-touch-icon-precomposed" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/apple-icon-57x57.png" /> <!-- For iPhone (57px) -->
+    <link rel="mask-icon" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/safari-pinned-tab.svg" color="#ffffff" /> <!-- Safari icon for pinned tab -->
+    <meta name="msapplication-TileColor" content="#2b5797" /> <!-- MS Icons -->
+    <meta name="msapplication-TileImage" content="//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.3/images/logos/EMBL-EBI/favicons/mstile-144x144.png" />
+
+
+    <!-- CSS: implied media=all -->
+    <!-- CSS concatenated and minified via ant build script -->
+
+    <!-- Deactivating the old include
+    <link rel="stylesheet" href="https://ebi.emblstatic.net//web_guidelines/EBI-Framework/v1.2/libraries/foundation-6/css/foundation.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.2/css/ebi-global.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.2/fonts.css" type="text/css" media="all" />
+    -->
+
+    <!--
+        <link rel="stylesheet" href="https://www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/libraries/foundation-6/css/foundation.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="https://www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/css/ebi-global.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="https://www.ebi.ac.uk/web_guidelines/EBI-Icon-fonts/v1.1/fonts.css" type="text/css" media="all" />
+    -->
+
+
+    <!-- Trying to get v1.3 working -->
+    <link rel="stylesheet" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/ebi-global.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.2/fonts.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://dev.ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/theme-embl-petrol.css" type="text/css" />
+
+    <!--
+    <link rel="stylesheet" href="https://www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/libraries/foundation-6/css/foundation.css" />
+    <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/ebi-global.css" type="text/css" media="all" />
+    -->
+
+
+
+    <!-- Use this CSS file for any custom styling -->
+    <!-- Css taken from old oxo
+    <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/develop/embl-petrol-colours.css" type="text/css" media="screen"/>
+-->
+
+
+    <!-- Temporary remove  style
+    <link rel="stylesheet" href="https://www.ebi.ac.uk/ols/css/ols.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="https://www.ebi.ac.uk/ols/css/ols-colors.css"  type="text/css" media="screen"/>
+    <link rel="stylesheet" href="../static/css/oxo.css" th:href="@{/css/oxo.css}" type="text/css" media="screen"/>
+
+
+    <link rel="stylesheet" href="../static/css/oxo.css" th:href="@{/css/oxo.css}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="../static/css/oxo-d3.css" th:href="@{/css/oxo-d3.css}" type="text/css" media="screen"/>
+    <link rel="stylesheet" th:href="@{/webjars/select2/4.0.0/dist/css/select2.min.css}" href="/webjars/select2/4.0.0/dist/css/select2.min.css"  type="text/css" media="screen"/>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" type="text/css" media="screen"/>
+    -->
+
+
+    <!--  bootstrap though!
+     <link  rel="stylesheet" th:href="@{/webjars/bootstrap-slider/5.3.1/css/bootstrap-slider.min.css}" href="/webjars/bootstrap-slider/5.3.1/css/bootstrap-slider.min.css"  type="text/css" media="screen"/>
+    -->
+    <!--    bootstrap css needed?    -->
+    <!--
+    <link rel="stylesheet" href="https://www.ebi.ac.uk/ols/css/bootstrap/3.3/css/bootstrap.min.css" type="text/css" media="screen"/>
+    -->
+
+    <!-- If you have a custom header image or colour -->
+    <!--
+    <meta name="ebi:localmasthead-color" content="#000" /> - ->
+    <meta name="ebi:localmasthead-image" content="/img/images/background.jpg"/>
+    <meta name="ebi:masthead-image"  content="img/background.jpg"/>-->
+
+    <meta name="ebi:masthead-color" content="#000" />
+    <meta name="ebi:masthead-image" content="https://www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/images/backgrounds/embl-ebi-background-4.jpg" />
+
+    <link rel="stylesheet" href="/ols-beta/css/new_ols.css" type="text/css" media="screen" />
+
+
+    <!-- you can replace this with theme-[projectname].css. See http://www.ebi.ac.uk/web/style/colour for details of how to do this -->
+    <!-- also inform ES so we can host your colour palette file -->
+
+
+    <!--
+        <link rel="stylesheet" href="https://www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/css/theme-embl-petrol.css" type="text/css" media="all" />
+    -->
+
+    <!-- for production the above can be replaced with -->
+    <!-- <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/mini/ebi-fluid-embl.css" /> -->
+    <!-- end CSS-->
+
+
+    <!-- All JavaScript at the bottom, except for Modernizr - - >
+    <script src="https://www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/libraries/modernizr/modernizr.custom.49274.js"></script>
+    -->
+
+</head>
+
+
+<!-- Place css that is need after head, because the head gets replaced, could potentially put this into the header if we don't mind loading it all the time -->
+<link rel="stylesheet" href="/ols-beta/js/jstree/themes/proton/style.min.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/ols-beta/css/typeahead/typeaheadjs.css" type="text/css" media="screen" />
+
+<body>
+
+    <div id="skip-to">
+        <a href="#content">Skip to main content</a>
+    </div>
+
+    <header id="masthead-black-bar" class="clearfix masthead-black-bar">
+    </header>
+    <div id="content">
+        <div data-sticky-container="true">
+            <header id="masthead" class="masthead" data-sticky="true" data-sticky-on="large" data-top-anchor="content:top" data-btm-anchor="content:bottom">
+                <div class="masthead-inner row">
+                    <!-- local-title -->
+                    <div class="columns medium-12" id="local-title">
+                        <!--<h1><a href="../../" title="Back to Oxo homepage">Ontology Xref Service</a></h1>-->
+                        <a href="../../" title="Back to OLS homepage">
+                            <img style="height:100px;" src="/ols-beta/img/OLS_logo_2017.png" />
+                        </a>
+                    </div>
+
+                    <!-- /local-title -->
+                    <!-- local-nav -->
+                    <nav>
+                        <ul class="dropdown menu float-left" data-description="navigational">
+                            <li class=""><a href="/ols-beta/index">Home</a></li>
+                            <li class=""><a href="/ols-beta/ontologies">Ontologies</a></li>
+                            <li class=""><a href="/ols-beta/docs">Documentation</a></li>
+                            <li class=""><a href="/ols-beta/about">About</a></li>
+                        </ul>
+                    </nav>
+                    <!-- /local-nav -->
+                </div>
+            </header>
+        </div>
+
+    </div>
+
+
+
+<section id="main-content-area" role="main">
+    <div vocab="http://schema.org/" typeof="MedicalCode" id="content" role="main" class="row">
+        <div class="breadcrumbDiv">
+            <div style="float:right;padding-right: 5px;">
+                <a style="float:right; border-bottom: none;" href="../../api/ontologies/efo/terms?iri=http://www.ebi.ac.uk/efo/EFO_0000400">
+                    <img src="../../img/file_JSON.png" alt="JSON" title="Get data as JSON" />
+                </a>
+            </div>
+
+            <nav id="breadcrumb">
+                <p style="display:inline;">
+                    <a href="../../index">OLS</a> &gt;
+                    <a class="nounderline" href="../../ontologies/efo">Experimental Factor Ontology</a>
+                    &nbsp;
+                    <a class="nounderline" property="codingSystem" href="../../ontologies/efo" style="border-bottom-width: 0px;" content="efo">
+                        <span class="ontology-source">EFO</span>
+                   </a>   &gt;
+                    <span id="shortForm" class="term-source" property="codeValue">EFO:0000400</span>
+
+                    <button title="Copy id to clipboard" id="copyShortForm" data-clipboard-action="copy" data-clipboard-target="#shortForm" class="button tiny third copyButton" type="button">Copy</button>
+                </p>
+            </nav>
+        </div>
+                <div>
+                    <div class="small-8 column">
+                        <h2 property="name" style="margin: 0px;">diabetes mellitus</h2>
+                        <a style="padding: 9px;border-bottom: none;" class="nounderline" target="blank" href="http://www.ebi.ac.uk/efo/EFO_0000400"><img src="../../img/external_link.png" alt="^" title="Go to external page" /></a>
+                        <span property="url" id="OLS_ID" style="font-size: small;color: grey;">http://www.ebi.ac.uk/efo/EFO_0000400</span>
+                        <p style="display:inline;"><button title="Copy id to clipboard" id="copyThis" data-clipboard-action="copy" data-clipboard-target="#OLS_ID" class="button tiny third copyButton" type="button">Copy</button></p>
+                    </div>
+
+                    <div id="termPageSearchBox" class="small-4 columns">
+                        <form name="local-search" action="../../search" method="get">
+                            <div id="bloodhound">
+                                <input class="form-control typeahead" autofocus="autofocus" type="text" name="q" data-olswidget="select" data-olsontology="efo" data-selectpath="../../" placeholder="Search EFO" aria-describedby="basic-addon1" />
+                                <button class="button secondary searchButton glyphicon glyphicon-search" style="" type="submit">Search!</button>
+                         </div>
+                         <input type="hidden" name="ontology" value="efo" />
+                     </form>
+                 </div>
+             </div>
+
+
+             <!--
+             <div class="grid_24 clearfix">
+                <p style="display:inline;"><button id='copyThis' data-clipboard-action="copy" data-clipboard-target="#test" type="button">Copy to clipboard</button></p>
+                 <p id="citeThis" style="display:inline;"><button type="button" title="Click here">Cite this</button></p>
+                 <p id="overlay" style="display:inline;"></p>
+             </div>-->
+
+
+                <div class="small-12 columns">
+                    <hr />
+
+                    <div property="description">
+
+
+
+
+                    </div>
+
+                    <div>
+                        <p><b>Synonyms:</b>
+                            <span property="alternateName" style="margin-left:9px;">Diabetes mellitus (disorder), Diabetes, Diabetes mellitus, NOS, DM - Diabetes mellitus, Diabetes NOS</span>
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+
+            <div id="terms-tab-content" class="small-8 columns">
+                   <ul class="tabs" data-tabs="true" id="terms_tabs">
+                       <li class="tabs-title is-active"><a id="tree-link" class="icon icon-functional" data-icon="h" data-tabs-target="tree-tab" href="#tree-tab" aria-selected="true"> Tree view</a></li>
+                       <li class="tabs-title"><a id="oxo-link" class="icon icon-generic" data-icon="g" data-tabs-target="oxo-tab" href="#oxo-tab"> Term mappings</a></li>
+                       <li class="tabs-title"><a id="diachron-link" class="icon icon-generic" data-icon="g" data-tabs-target="diachron-tab" href="#diachron-tab"> Term history</a></li>
+
+                        <!--<li role="presentation"><a data-toggle="tab" href="#graph-tab"  th:onclick="'window.open(\'@{../../ontologies/__${ontologyTerm.getOntologyName()}__/terms/graph (iri=${ontologyTerm.getIri()})\'})'" th:href="@{../../ontologies/__${ontologyTerm.getOntologyName()}__/terms/graph (iri=${ontologyTerm.getIri()})}" target="_blank">Visualisation</a></li>-->
+                        <!--<li role="presentation"><a data-toggle="tab"  href="#graph-tab">Graph view</a></li>-->
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tabs-content" data-tabs-content="terms_tabs">
+                        <div class="tabs-panel is-active" id="tree-tab">
+                            <div id="tree_tab_button_box">
+                                <button class="button secondary" value="true" title="Redraw the tree to focus on this terms" onclick="location.reload(true)">Reset tree</button>
+                                <button id="showSliblingsButton" class="button secondary" value="true" title="Expand the tree to show sibling terms" onclick="termInstance.toggleSiblings(this)">Show siblings</button>
+                                <button class="button icon icon-conceptual" data-icon="o" title="Visualisation of this term" onclick="javascript:window.open(&#39;../../ontologies/efo/terms/graph?iri=http://www.ebi.ac.uk/efo/EFO_0000400&#39;)">Graph view</button>
+                            </div>
+
+
+                            <div id="term-tree" data-olswidget="tree" data-selectpath="../../" data-ols-termtype="class" data-olsontology="efo" data-ols-iri="http://www.ebi.ac.uk/efo/EFO_0000400">
+                            </div>
+                        </div>
+
+
+                        <div class="tabs-panel" id="diachron-tab">
+                            <div id="diachron-wrapper"></div>
+                        </div>
+
+
+                        <div class="tabs-panel" id="oxo-tab">
+                            This is just here as a test because I lose it
+                        </div>
+
+                        <!--<div role="tabpanel" class="tab-pane" id="oxo-tab">
+                       <div id="oxo-wrapper">
+                            <form>
+                               <span>Mapping Distance: </span>
+                                <div style="margin-left: 15px;display: inline;">
+                                    <input  type="text" id="distance-slider" name="distance" data-slider-id='ex1Slider' data-slider-value="1" value="1"/>
+                                    </div>
+                               <input type="hidden" name="inputSource" th:value="${inputSource}"/>
+                                <input th:each="target : ${mappingTarget}" type="hidden" name="mappingTarget" th:value="${target}"/>
+                                <input type="hidden" name="ids" th:value="${ontologyTerm.getShortForm()}"/>
+                                </form>;
+
+
+                            <div>
+                               <table id="example" style="border-collapse: collapse;" data-hide-from-col="true" data-hide-table-info="true" data-api-path="//localhost:8081/oxo/" data-with-progress="false">
+                                   </table>
+                                </div>
+                            </div>
+                        </div>-->
+                   </div>
+                </div>
+
+
+                <div id="right_info_box" class="small-4 columns">
+                    <div id="term_info_box" class="panel">
+                        <div class="panel-heading">
+                            <h3>Term info</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!--
+                            &lt;!&ndash;<div>&ndash;&gt;
+                            &lt;!&ndash;<span>Short id: </span>&ndash;&gt;
+                            &lt;!&ndash;<p th:text="${ontologyTerm.getShortForm()}">NCBI_9606</p>&ndash;&gt;
+                            &lt;!&ndash;</div>&ndash;&gt;
+
+                            &lt;!&ndash;<div th:if="${ontologyTerm.getOboId() != null}">&ndash;&gt;
+                            &lt;!&ndash;<span>OBO id: </span>&ndash;&gt;
+                            &lt;!&ndash;<p th:text="${ontologyTerm.getOboId()}">NCBI:9606</p>&ndash;&gt;
+                            &lt;!&ndash;</div>&ndash;&gt;
+                            -->
+
+
+
+
+
+
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=DOID_definition_citation&amp;exact=true&amp;type=property&amp;ontology=efo">DOID definition citation</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">DOID:9351</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=ICD9_definition_citation&amp;exact=true&amp;type=property&amp;ontology=efo">ICD9 definition citation</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">ICD9:250</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=MSH_definition_citation&amp;exact=true&amp;type=property&amp;ontology=efo">MSH definition citation</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">MSH:D003920</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=NCI_Thesaurus_definition_citation&amp;exact=true&amp;type=property&amp;ontology=efo">NCI Thesaurus definition citation</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">NCIt:C2985</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=OMIM_definition_citation&amp;exact=true&amp;type=property&amp;ontology=efo">OMIM definition citation</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">OMIM:612227</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=SNOMEDCT_definition_citation&amp;exact=true&amp;type=property&amp;ontology=efo">SNOMEDCT definition citation</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">SNOMEDCT:73211009</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=bioportal_provenance&amp;exact=true&amp;type=property&amp;ontology=efo">bioportal provenance</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">Diabetes mellitus, NOS[accessedResource: SNOMEDCT:73211009][accessDate: 05-04-2011], Diabetes mellitus (disorder)[accessedResource: DOID:9351][accessDate: 05-04-2011], DM - Diabetes mellitus[accessedResource: SNOMEDCT:73211009][accessDate: 05-04-2011], A heterogeneous group of disorders characterized by HYPERGLYCEMIA and GLUCOSE INTOLERANCE.[accessedResource: MSH:D003920][accessDate: 05-04-2011], Diabetes NOS[accessedResource: DOID:9351][accessDate: 05-04-2011], Diabetes[accessedResource: DOID:9351][accessDate: 05-04-2011], A metabolic disorder characterized by abnormally high blood sugar levels due to diminished production of insulin or insulin resistance/desensitization.[accessedResource: NCIt:C2985][accessDate: 05-04-2011]</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=definition&amp;exact=true&amp;type=property&amp;ontology=efo">definition</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">A heterogeneous group of disorders characterized by HYPERGLYCEMIA and GLUCOSE INTOLERANCE., A metabolic disorder characterized by abnormally high blood sugar levels due to diminished production of insulin or insulin resistance/desensitization.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=gwas_trait&amp;exact=true&amp;type=property&amp;ontology=efo">gwas trait</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">true</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <b>
+                                        <a href="../../search?q=term%20editor&amp;exact=true&amp;type=property&amp;ontology=efo">term editor</a>
+                                    </b>
+                                    <p class="annotation-value" style="margin-left:9px;">James Malone</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="term_relation_box" class="panel">
+                        <div class="panel-heading">
+                            <h3>Term relations</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!--<div th:if="${parentTerms != null}">
+                            <b>Parents</b>
+                            <br/>
+                            </div>-->
+
+
+
+                            <div>
+                                <b>Subclass of: </b>
+                                <br />
+                                <ul>
+                                    <li>
+                                        <a href="terms?iri=http://www.ebi.ac.uk/efo/EFO_0000589" title="http://www.ebi.ac.uk/efo/EFO_0000589">metabolic disease</a>
+                                    </li>
+                                    <li><a href="http://purl.obolibrary.org/obo/OBI_0000300" class='ObjectProperty mansyntax' title="http://purl.obolibrary.org/obo/OBI_0000300">realized_in</a> <span class='some'>some</span> (<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://purl.obolibrary.org/obo/OGMS_0000063" class='mansyntax Class' title="http://purl.obolibrary.org/obo/OGMS_0000063">disease&nbsp;course</a> <span class='keyword'>and</span> <br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://purl.obolibrary.org/obo/BFO_0000051" class='ObjectProperty mansyntax' title="http://purl.obolibrary.org/obo/BFO_0000051">has&nbsp;part</a> <span class='some'>some</span> <a href="http://purl.obolibrary.org/obo/GO_0008152" class='mansyntax Class' title="http://purl.obolibrary.org/obo/GO_0008152">metabolic&nbsp;process</a>)</li>
+                                </ul>
+
+
+                                <br />
+                            </div>
+
+
+                            <div>
+                                <b>Related from:</b>
+                                <br />
+                                <div>
+                                    <a class="ObjectProperty" href="../../search?q=is_about&amp;exact=true&amp;type=property&amp;ontology=efo">is_about</a>
+                                    <ul>
+                                        <li>
+                                            <a href="terms?iri=http://www.ebi.ac.uk/efo/EFO_0004467" title="http://www.ebi.ac.uk/efo/EFO_0004467">insulin measurement</a>
+                                        </li>
+                                        <li>
+                                            <a href="terms?iri=http://www.ebi.ac.uk/efo/EFO_0005766" title="http://www.ebi.ac.uk/efo/EFO_0005766">skin fluorescence measurement</a>
+                                        </li>
+                                        <li>
+                                            <a href="terms?iri=http://www.ebi.ac.uk/efo/EFO_0008465" title="http://www.ebi.ac.uk/efo/EFO_0008465">glucagon-like peptide-1 measurement</a>
+                                        </li>
+                                        <li>
+                                            <a href="terms?iri=http://www.ebi.ac.uk/efo/EFO_0008464" title="http://www.ebi.ac.uk/efo/EFO_0008464">glucose-dependent insulinotropic peptide measurement</a>
+                                        </li>
+                                        <li>
+                                            <a href="terms?iri=http://www.ebi.ac.uk/efo/EFO_0008463" title="http://www.ebi.ac.uk/efo/EFO_0008463">glucagon measurement</a>
+                                        </li>
+                                        <li>
+                                            <a href="terms?iri=http://www.ebi.ac.uk/efo/EFO_0008473" title="http://www.ebi.ac.uk/efo/EFO_0008473">insulin response measurement</a>
+                                        </li>
+
+                                    </ul>
+                                    <!--<span th:each="term,iterStat: ${relation.value}">&ndash;&gt;
+                                        &lt;!&ndash;<a href="#" th:href="@{terms (iri=${term.iri})}" th:text="${term.label}">parent 1</a>&ndash;&gt;
+                                        &lt;!&ndash;<span th:if="${iterStat.count &lt; iterStat.size}">, </span>&ndash;&gt;
+                                        &lt;!&ndash;</span>-->
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+    </div>
+</section>
+
+
+
+
+    <!-- Optional local footer (insert citation / project-specific copyright / etc here -->
+    <!--
+    <footer id="local-footer" class="local-footer" role="local-footer">
+      <div class="row">
+        <span class="reference">How to reference this page: ...</span>
+      </div>
+    </footer>
+    -->
+    <!-- End optional local footer -->
+    <div class="row">
+    <div id="elixir-banner" data-color="grey" data-name="The Ontology Lookup Service" data-description="OLS is an Elixir interoperability service" data-more-information-link="//www.elixir-europe.org/platforms/interoperability" data-use-basic-styles="true"></div>
+    <script src="//ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/js/elixirBanner.js"></script>
+    </div>
+
+    <footer>
+        <!-- https://www.ebi.ac.uk/style-lab/websites/patterns/banner-elixir.html
+        <div id="elixir-banner" data-color="none" data-name="This service" data-description="I am a super cool service" data-more-information-link="https://www.elixir-europe.org/about-us/who-we-are/nodes/embl-ebi" data-use-basic-styles="true"></div>
+        -->
+        <div id="global-footer" class="global-footer">
+            <nav id="global-nav-expanded" class="global-nav-expanded row">
+                <!-- Footer will be automatically inserted by footer.js -->
+            </nav>
+            <section id="ebi-footer-meta" class="ebi-footer-meta row">
+                <!-- Footer meta will be automatically inserted by footer.js -->
+            </section>
+        </div>
+    </footer>
+
+
+    <script defer="defer" src="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/js/elixirBanner.js"></script>
+
+
+
+    <!-- JavaScript -->
+
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <!--
+    <script>window.jQuery || document.write('<script src="../js/libs/jquery-1.10.2.min.js"><\/script>')</script>
+    We include Jquery from war below, then we'd don't need this line  .... -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-69391170-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- Using other URL for v1.3 does not change anything -->
+    <script defer="defer" src="//www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.3/js/script.js"></script>
+    <script src="//www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.3/libraries/foundation-6/js/foundation.js"></script>
+    <script src="//www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.3/js/foundationExtendEBI.js"></script>
+    <script type="text/JavaScript">$(document).foundation();</script>
+    <script type="text/JavaScript">$(document).foundationExtendEBI();</script>
+
+<!--<script type="text/javascript" th:src="@{/webjars/d3js/3.5.17/d3.min.js}" src="/webjars/d3js/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" th:src="@{/webjars/select2/4.0.0/dist/js/select2.min.js}" src="/webjars/select2/4.0.0/dist/js/select2.min.js"></script>-->
+
+
+
+
+
+
+
+<!--<script type="text/javascript" src="../static/js/jquery/1.11.1/jquery.min.js" th:src="@{../../js/jquery/1.11.1/jquery.min.js}"></script>
+<script type="text/javascript" src="../static/js/typeahead/typeahead.bundle.js" th:src="@{../../js/typeahead/typeahead.bundle.js}"></script>
+<script type="text/javascript" src="../static/js/handlebars/4.0.5/handlebars.min.js" th:src="@{../../js/handlebars/4.0.5/handlebars.min.js}"></script>
+<script type="text/javascript" src="../static/js/bootstrap/bootstrap.min.js" th:src="@{../../js/bootstrap/bootstrap.min.js}"></script>
+-->
+
+<script type="text/javascript" src="https://cdn.datatables.net/r/zf-5.5.2/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+<script type="text/javascript" src="../../js/typeahead/typeahead.bundle.js"></script>
+<script type="text/javascript" src="../../js/handlebars/4.0.5/handlebars.min.js"></script>
+
+
+<script type="text/javascript" src="../../js/ols.js"></script>
+<script src="../../js/jstree/jstree.min.js"></script>
+
+<script type="text/javascript" src="../../js/ols-termselect2.js?beta=r1"></script>
+<script type="text/javascript" src="../../js/ols-treeview.min.js?v=0.0.42"></script>
+<script type="text/javascript" src="../../js/clipboard.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.mansyntax').each(function ()
+        {
+//            $(this).trigger('click');//for clicking element
+            var href = $(this).attr("href");
+            if ($(this).hasClass('ObjectProperty')) {
+                $(this).attr("href", getUrlType('property') + '?iri=' + encodeURIComponent(href));
+            }
+            else if ($(this).hasClass('Class')) {
+                $(this).attr("href", getUrlType('class') + '?iri=' + encodeURIComponent(href));
+            }
+            else if ($(this).hasClass('Individual')) {
+                $(this).attr("href", getUrlType('individual') + '?iri=' + encodeURIComponent(href));
+            }
+        });
+
+        $('.annotation-value').each(function () {
+            var value = $(this).text();
+            if (value.match(/.+\.(gif|png|jpe?g)$/i))  {
+                $(this).text("");
+                var img = $('<img />');
+                img.css('max-width', '200px');
+                img.css('width', '100%');
+                img.css('height', 'auto');
+                img.attr('src', value);
+                $(this).append(img)
+            }
+
+        });
+
+        /*$('#citeThis').on('click', function (){
+         $('#overlay').html('<p id="overlay" style="display:inline; opacity:0.5; background:light-gray;">Imaging here to be text to be cited we still think about the layout <a id="close" href="">close</a></p>')
+         $('#close').on('click', function(){  $("#overlay").hide();})
+         })*/
+
+        new Clipboard('#copyThis')
+        new Clipboard('#copyShortForm')
+    });
+</script>
+
+<script>
+    console.log("Initialize tree")
+    // initialise the tree
+    var div=$("#term-tree");
+    var ontologyName = $("#term-tree").data("olsontology");
+    var termType = $("#term-tree").data("ols-termtype");
+    var termIri = $("#term-tree").data("ols-iri");
+    var relativePath = $("#term-tree").data("selectpath") ? $("#term-tree").data("selectpath") : '';
+
+    var app = require("ols-treeview");
+    var termInstance = new app();
+    termInstance.draw(div, false, ontologyName, termType, termIri, relativePath, {save_state: true});
+</script>
+
+
+<!-- Start Diachron include scripts-->
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="//code.highcharts.com/highcharts-more.js"></script>
+<script src="//code.highcharts.com/modules/exporting.js"></script>
+<script src="//code.highcharts.com/modules/no-data-to-display.js"></script>
+<script src="../../js/diachron/underscore-min.js"></script>
+<script src="../../js/diachron/changes.js"></script>
+<script src="../../js/diachron/moment.js"></script>
+<script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+
+</body>
+</html>
